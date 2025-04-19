@@ -14,6 +14,7 @@ class GroqAPI:
             raise ValueError("GROQ_API_KEY environment variable is not set")
             
         try:
+            # Initialize client without proxies parameter
             self.client = groq.Client(api_key=self.api_key)
             logging.info("Groq client initialized successfully")
         except Exception as e:
