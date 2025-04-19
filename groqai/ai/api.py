@@ -5,19 +5,30 @@ import groq
 import speech_recognition as sr
 from pydub import AudioSegment
 from PIL import Image
+import logging
 
 class GroqAPI:
     def __init__(self):
-        self.api_key = os.getenv("SECRET_API_KEY")
-        self.client = groq.Client(api_key=self.api_key)
+        self.api_key = os.getenv("GROQ_API_KEY")
+        if not self.api_key:
+            raise ValueError("GROQ_API_KEY environment variable is not set")
+            
+        try:
+            self.client = groq.Client(api_key=self.api_key)
+            logging.info("Groq client initialized successfully")
+        except Exception as e:
+            logging.error(f"Failed to initialize Groq client: {str(e)}")
+            raise
+            
         self.audio_enabled = False
         
         try:
             # Try to initialize speech recognition to check if audio features are available
             sr.Recognizer()
             self.audio_enabled = True
+            logging.info("Audio features enabled")
         except Exception as e:
-            print(f"Audio features disabled: {str(e)}")
+            logging.warning(f"Audio features disabled: {str(e)}")
             self.audio_enabled = False
 
         self.system_prompt = {
@@ -30,6 +41,9 @@ class GroqAPI:
     def get_chat_response(self, user_input, use_agent=False):
         """Get a response from the Groq chatbot for text input"""
         try:
+            if not self.client:
+                return "Error: Groq API is not properly initialized. Please check your API key."
+                
             self.chat_history.append({"role": "user", "content": user_input})
             
             # Select model based on whether we want to use agentic capabilities
@@ -61,6 +75,7 @@ class GroqAPI:
         
         except Exception as e:
             error_message = f"An error occurred while generating a response: {str(e)}"
+            logging.error(error_message)
             return error_message
     
     def speech_to_text(self, audio_data):

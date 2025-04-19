@@ -64,12 +64,12 @@ try:
 except ImportError:
     logging.warning("screenpipe module not found, screen recording functionality will not be available")
 
-# Initialize Groq API if key is available
+# Initialize Groq API
 try:
     groq_api = GroqAPI()
     logging.info("Groq API initialized successfully")
 except Exception as e:
-    logging.warning(f"Failed to initialize Groq API: {e}")
+    logging.error(f"Failed to initialize Groq API: {str(e)}")
     groq_api = None
 
 @app.route('/')
