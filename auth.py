@@ -127,21 +127,31 @@ def login():
         return redirect(url_for('index'))
     
     if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
-        
-        user = User.query.filter_by(email=email).first()
-        
-        if user is None or not user.check_password(password):
-            flash('Invalid email or password')
+        try:
+            email = request.form.get('email')
+            password = request.form.get('password')
+            
+            if not email or not password:
+                flash('Please enter both email and password', 'error')
+                return redirect(url_for('auth.login'))
+            
+            user = User.query.filter_by(email=email).first()
+            
+            if user is None or not user.check_password(password):
+                flash('Invalid email or password', 'error')
+                return redirect(url_for('auth.login'))
+                
+            if not user.is_verified:
+                flash('Please verify your email first', 'error')
+                return redirect(url_for('auth.verify_otp', email=email))
+                
+            login_user(user)
+            return redirect(url_for('index'))
+            
+        except Exception as e:
+            logging.error(f"Login error: {str(e)}")
+            flash('An error occurred during login. Please try again.', 'error')
             return redirect(url_for('auth.login'))
-            
-        if not user.is_verified:
-            flash('Please verify your email first')
-            return redirect(url_for('auth.verify_email'))
-            
-        login_user(user)
-        return redirect(url_for('index'))
         
     return render_template('auth/login.html')
 

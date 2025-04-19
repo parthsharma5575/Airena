@@ -26,15 +26,16 @@
                     {% endif %}
                 {% endwith %}
                 
-                <form method="POST" action="{{ url_for('auth.verify_otp', email=email) }}">
+                <form method="POST" action="{{ url_for('auth.verify_otp', email=email) }}" id="otpForm">
                     <div class="otp-input-group">
-                        <input type="text" name="otp" maxlength="1" pattern="[0-9]" required>
-                        <input type="text" name="otp" maxlength="1" pattern="[0-9]" required>
-                        <input type="text" name="otp" maxlength="1" pattern="[0-9]" required>
-                        <input type="text" name="otp" maxlength="1" pattern="[0-9]" required>
-                        <input type="text" name="otp" maxlength="1" pattern="[0-9]" required>
-                        <input type="text" name="otp" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" name="otp1" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" name="otp2" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" name="otp3" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" name="otp4" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" name="otp5" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" name="otp6" maxlength="1" pattern="[0-9]" required>
                     </div>
+                    <input type="hidden" name="otp" id="combinedOtp">
                     <button type="submit" class="auth-btn verify-otp-btn">Verify OTP</button>
                 </form>
                 
@@ -63,6 +64,12 @@
                     inputs[index - 1].focus();
                 }
             });
+        });
+
+        // Combine OTP digits before form submission
+        document.getElementById('otpForm').addEventListener('submit', function(e) {
+            const otp = Array.from(inputs).map(input => input.value).join('');
+            document.getElementById('combinedOtp').value = otp;
         });
     </script>
 </body>
