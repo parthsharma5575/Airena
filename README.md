@@ -1,36 +1,26 @@
-# AIrena - Your AI Playground
+# AIrena
 
-AIrena is a cutting-edge platform that brings together various AI technologies in one place. Our mission is to make AI accessible and fun for everyone.
+AIrena is an AI-powered platform that provides entertainment and educational experiences through various interactive features.
 
 ## Features
 
-- 🔐 Secure Authentication with OTP Verification
-- 💬 Interactive AI Chat
-- 🎮 AI-Powered Games
-- 📚 Educational Quizzes
-- 🎨 Creative AI Tools
-- 🎥 Screen Recording Capabilities
+- AI Chat: Chat with our advanced AI assistant powered by Groq
+- Educational Quizzes: Test your knowledge with AI-generated quizzes
+- AI Games: Play games enhanced with artificial intelligence
+- Screen Recording: Record and share your gameplay experiences
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.8 or higher
-- pip (Python package manager)
-- Virtual environment (recommended)
-
-### Installation
+## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/airena.git
-cd airena
+git clone https://github.com/parthsharma5575/Airena.git
+cd Airena
 ```
 
-2. Create and activate a virtual environment:
+2. Create a virtual environment and activate it:
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. Install dependencies:
@@ -39,22 +29,16 @@ pip install -r requirements.txt
 ```
 
 4. Set up environment variables:
-Create a `.env` file in the root directory with the following variables:
+Create a `.env` file with the following variables:
 ```
-FLASK_APP=main.py
-FLASK_ENV=development
-SECRET_KEY=your-secret-key
-SMTP_SERVER=smtp.gmail.com
-SMTP_PORT=587
-EMAIL_USERNAME=your-email@gmail.com
-EMAIL_PASSWORD=your-app-password
+EMAIL_USERNAME=your_email@gmail.com
+EMAIL_PASSWORD=your_app_password
+GROQ_API_KEY=your_groq_api_key
 ```
 
 5. Initialize the database:
 ```bash
-flask db init
-flask db migrate
-flask db upgrade
+python reset_db.py
 ```
 
 6. Run the application:
@@ -62,50 +46,18 @@ flask db upgrade
 python main.py
 ```
 
-The application will be available at `http://localhost:5001`
+## Technologies Used
 
-## Project Structure
-
-```
-airena/
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── animations.js
-│   └── images/
-├── templates/
-│   ├── auth/
-│   │   ├── login.html
-│   │   ├── signup.html
-│   │   ├── forgot_password.html
-│   │   └── reset_password.html
-│   ├── base.html
-│   └── index.html
-├── models.py
-├── auth.py
-├── main.py
-└── requirements.txt
-```
-
-## Team
-
-- Mokshit Kaushik - Lead Developer
-- Sumukhi Tripathi - UI/UX Designer
-- Kanishka Sharma - AI Engineer
-- Parth Sharma - Project Manager
+- Flask: Web framework
+- SQLAlchemy: Database ORM
+- Groq API: AI chat functionality
+- Flask-Mail: Email services
+- HTML/CSS/JavaScript: Frontend development
 
 ## Contributing
 
-We welcome contributions! Please feel free to submit a Pull Request.
+Feel free to submit issues and enhancement requests.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Flask - Web framework
-- SQLAlchemy - Database ORM
-- GSAP - Animation library
-- Bootstrap - UI framework 
+This project is licensed under the MIT License.
