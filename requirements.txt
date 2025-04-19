@@ -18,4 +18,5 @@ click==8.1.7
 MarkupSafe==2.1.5
 groq==0.4.2
 SpeechRecognition==3.10.1
-pyaudio==0.2.14 
+pyaudio==0.2.14
+pydub==0.25.1 
