@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter - Multiplayer</title>
+    <style>
+        /* Define animation variables */
+        :root {
+            --anim-duration-fast: 0.3s;
+            --anim-duration-normal: 0.5s;
+            --anim-duration-slow: 0.8s;
+            --anim-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+            --anim-ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --primary-color: #6e48aa;
+            --secondary-color: #ff7849;
+        }
+        
+        /* Animation keyframes */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(110, 72, 170, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(110, 72, 170, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(110, 72, 170, 0.5); }
+        }
+        
+        @keyframes slide-in-left {
+            0% { transform: translateX(-100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slide-in-right {
+            0% { transform: translateX(100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes fade-in-up {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Animation classes */
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        .glow-animation {
+            animation: glow 2s infinite;
+        }
+        
+        .slide-in-left {
+            animation: slide-in-left var(--anim-duration-normal) var(--anim-ease) forwards;
+        }
+        
+        .slide-in-right {
+            animation: slide-in-right var(--anim-duration-normal) var(--anim-ease) forwards;
+        }
+        
+        .fade-in-up {
+            animation: fade-in-up var(--anim-duration-normal) var(--anim-ease) forwards;
+        }
+        
+        .rotate-animation {
+            animation: rotate 10s linear infinite;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: #111;
+        }
+        #game-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #ui {
+            width: 800px;
+            padding: 10px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        #scoreboard {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+        .player-score {
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+        #game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+        #login-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(40, 20, 60, 0.95));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+        
+        .game-option {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .game-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(182, 79, 200, 0.3);
+        }
+        
+        .neon-text {
+            color: #fff;
+            text-shadow: 0 0 5px #b64fc8, 0 0 10px #b64fc8, 0 0 15px #b64fc8;
+        }
+        
+        .game-button {
+            transition: all 0.3s ease;
+        }
+        
+        .game-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(182, 79, 200, 0.8);
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        /* Back button styling */
+        .btn-back-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        
+        .btn-back {
+            background-color: #333;
+            padding: 8px 15px;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+        
+        .btn-back:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back button to return to main app -->
+    <div class="btn-back-container slide-in-left">
+        <a href="/" class="btn-back pulse-animation">← Back to Main App</a>
+    </div>
+
+    <div id="login-screen">
+        <h1 class="slide-in-left neon-text" style="animation-delay: 0.2s">Choose Your Game</h1>
+        <p class="fade-in-up" style="animation-delay: 0.4s; margin-bottom: 40px;">Select which game you want to play</p>
+        
+        <div class="game-selection-container fade-in-up" style="animation-delay: 0.5s; display: flex; justify-content: center; gap: 20px;">
+            <div class="game-option glow-animation" style="background: rgba(30, 30, 30, 0.8); border-radius: 15px; width: 200px; padding: 30px; text-align: center;">
+                <div class="option-icon float-animation" style="margin-bottom: 20px;">
+                    <i class="fas fa-rocket" style="color: #b64fc8; font-size: 3rem;"></i>
+                </div>
+                <h3 class="neon-text">Space Shooter</h3>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Play the new space shooter game against AI</p>
+                <button id="start-space-game" class="game-button pulse-animation" style="background: #b64fc8; border: none; color: white; padding: 10px 20px; border-radius: 30px; cursor: pointer;">Play Now</button>
+            </div>
+            
+            <div class="game-option glow-animation" style="background: rgba(30, 30, 30, 0.8); border-radius: 15px; width: 200px; padding: 30px; text-align: center;">
+                <div class="option-icon float-animation" style="margin-bottom: 20px;">
+                    <i class="fas fa-fist-raised" style="color: #b64fc8; font-size: 3rem;"></i>
+                </div>
+                <h3 class="neon-text">Fighting Game</h3>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Create a new fighting match (coming soon)</p>
+                <button class="game-button" style="background: #555; border: none; color: white; padding: 10px 20px; border-radius: 30px; cursor: not-allowed; opacity: 0.5;">Coming Soon</button>
+            </div>
+            
+            <div class="game-option glow-animation" style="background: rgba(30, 30, 30, 0.8); border-radius: 15px; width: 200px; padding: 30px; text-align: center;">
+                <div class="option-icon float-animation" style="margin-bottom: 20px;">
+                    <i class="fas fa-sign-in-alt" style="color: #b64fc8; font-size: 3rem;"></i>
+                </div>
+                <h3 class="neon-text">Join Game</h3>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Enter a game code to join a match</p>
+                <button id="show-join-form" class="game-button" style="background: #555; border: none; color: white; padding: 10px 20px; border-radius: 30px; cursor: not-allowed; opacity: 0.5;">Coming Soon</button>
+            </div>
+        </div>
+        
+        <div id="username-form" style="display: none; margin-top: 30px;" class="fade-in-up">
+            <input type="text" id="username" placeholder="Enter your username" class="slide-in-right" style="animation-delay: 0.6s; padding: 10px; border-radius: 5px; border: 1px solid #b64fc8; background: rgba(30, 30, 30, 0.8); color: white;">
+            <button id="start-button" class="pulse-animation glow-animation" style="animation-delay: 0.8s; background: #b64fc8; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Start Game</button>
+        </div>
+    </div>
+
+    <div id="game-container">
+        <canvas id="game-canvas" width="800" height="600"></canvas>
+        <div id="ui">
+            <div id="scoreboard"></div>
+            <div id="status">Connecting to server...</div>
+            <div class="game-controls"></div>
+        </div>
+    </div>
+
+    <div id="game-over">
+        <h2 class="slide-in-left" style="animation-delay: 0.2s">Game Over</h2>
+        <div id="final-scores" class="fade-in-up" style="animation-delay: 0.5s"></div>
+        <button id="restart-button" class="pulse-animation glow-animation" style="animation-delay: 0.8s">Play Again</button>
+    </div>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Tone.js for sound effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.30/Tone.js"></script>
+    
+    <!-- Game JavaScript -->
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+    <!-- Screen Recording JavaScript -->
+    <script src="/screenshare/static/screenrecorder.js"></script>
+</body>
+</html>

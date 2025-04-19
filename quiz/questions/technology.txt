@@ -1,0 +1,46 @@
+What does CPU stand for?|Central Processing Unit|Central Program Unit|Computer Processing Unit|Core Processing Unit
+Who is the founder of Microsoft?|Bill Gates|Steve Jobs|Mark Zuckerberg|Larry Page
+What does HTML stand for?|Hypertext Markup Language|High Tech Machine Learning|Hypertext Machine Language|Home Tool Markup Language
+Which programming language is known as the "mother of all languages"?|FORTRAN|C|Java|Python
+What is the main function of RAM in a computer?|Temporary data storage|Permanent data storage|Processing data|Displaying graphics
+What year was the first iPhone released?|2007|2005|2010|2001
+What does URL stand for?|Uniform Resource Locator|Universal Resource Locator|Uniform Retrieval Locator|Universal Reference Link
+Which company developed the Android operating system?|Google|Apple|Microsoft|Samsung
+What is the binary code for the number 10?|1010|1000|1100|1111
+Which technology is used for short-range wireless communication?|Bluetooth|Wi-Fi|5G|LTE
+What is cloud computing?|Delivering computing services over the internet|High-altitude satellite networks|Weather forecasting technology|Computer cooling systems
+What is the most common format for compressed image files on the web?|JPEG|PNG|GIF|BMP
+What does VPN stand for?|Virtual Private Network|Very Powerful Network|Virtual Personal Navigator|Visual Processing Network
+Which social media platform was launched in 2004?|Facebook|Twitter|Instagram|Snapchat
+What is the function of an IP address?|Identify devices on a network|Protect against viruses|Speed up downloads|Store website data
+What is the name of Amazon's virtual assistant?|Alexa|Siri|Cortana|Google Assistant
+What does SSD stand for in computing?|Solid State Drive|System Storage Device|Secure Storage Disk|Super Speed Drive
+Which company produces the Windows operating system?|Microsoft|Apple|IBM|Google
+What is the primary component of a quantum computer?|Qubits|Transistors|Microchips|Resistors
+What is the name for malicious software that demands payment after locking a user's files?|Ransomware|Spyware|Adware|Worm
+What does IoT stand for?|Internet of Things|Input Output Technology|Information on Time|Internet of Terminals
+Which web browser is developed by Mozilla?|Firefox|Chrome|Safari|Edge
+What was the first widely used social media platform?|Six Degrees|Facebook|MySpace|Friendster
+What programming language was created by James Gosling at Sun Microsystems?|Java|Python|C++|JavaScript
+What does PDF stand for?|Portable Document Format|Personal Data File|Printable Document Format|Public Data Format
+What is the "dark web"?|Content requiring special software to access|Websites with dark themes|Internet during nighttime|Black market websites
+What does API stand for in programming?|Application Programming Interface|Advanced Programming Interface|Automated Process Integration|Application Process Input
+Which technology is used for contactless payment systems?|NFC|Bluetooth|Wi-Fi|GPS
+What is the term for unwanted emails?|Spam|Junk|Trash|Scrap
+What is the main function of a firewall?|Network security protection|Cooling computer components|Speeding up internet connections|Storing backup files
+Which company developed the first commercially successful personal computer?|IBM|Apple|Microsoft|Dell
+What does GUI stand for?|Graphical User Interface|General User Input|Graphical Unified Interface|Global User Interaction
+What is the largest unit of digital information?|Yottabyte|Terabyte|Petabyte|Exabyte
+What does SQL stand for?|Structured Query Language|System Query Language|Standard Question Language|Simple Query Language
+What is the technology that allows devices to connect to the internet wirelessly?|Wi-Fi|Bluetooth|NFC|Infrared
+What type of malware replicates itself to spread to other computers?|Virus|Trojan|Spyware|Adware
+Which hardware component stores data permanently?|Hard Drive|RAM|CPU|GPU
+What is the process of converting data into a code to prevent unauthorized access?|Encryption|Hacking|Phishing|Coding
+What is the name of the Google web browser?|Chrome|Safari|Firefox|Edge
+Which programming language is commonly used for artificial intelligence?|Python|Java|C#|Ruby
+What does CAPTCHA stand for?|Completely Automated Public Turing test to tell Computers and Humans Apart|Computer Automated Program to Check Human Authentication|Computer Authentication Process for Checking Humans Accurately|Complete Authentication Process To Check Humans Apart
+What is a "cookie" in web browsing?|Small data file stored on a user's computer|Small software program|Internet safety protocol|Web browser extension
+Which technology is used in digital voice assistants like Siri and Alexa?|Natural Language Processing|Quantum Computing|Blockchain|Virtual Reality
+What is the function of DNS in internet infrastructure?|Translates domain names to IP addresses|Secures data transfer|Manages internet traffic|Stores website data
+What does HDMI stand for?|High-Definition Multimedia Interface|High-Digital Media Input|Hyper-Dimensional Media Interface|Home Digital Multimedia Input
+Which technology is used for digital currencies like Bitcoin?|Blockchain|Cloud Computing|Machine Learning|Artificial Intelligence

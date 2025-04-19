@@ -1,0 +1,49 @@
+What is the value of π (pi) to two decimal places?|3.14|3.12|3.16|3.18
+What is the next number in the sequence: 1, 1, 2, 3, 5, 8, ...?|13|12|11|15
+What is the square root of 144?|12|14|10|16
+How many sides does a heptagon have?|7|6|8|9
+What is the formula for the area of a circle?|πr²|2πr|πr|2πr²
+What is 7 × 8?|56|54|48|64
+What is the sum of angles in a triangle?|180°|360°|90°|270°
+What is the value of 5²?|25|10|125|20
+What is the result of 15 ÷ 3?|5|6|4|5.5
+What is the perimeter of a square with sides of length 4 cm?|16 cm|8 cm|12 cm|20 cm
+If x + 5 = 12, what is the value of x?|7|8|6|5
+What is the least common multiple of 4 and 6?|12|24|36|6
+What is the result of 2³?|8|6|9|12
+What is the formula for the Pythagorean theorem?|a² + b² = c²|a + b = c|a² - b² = c²|2a + 2b = c
+How many degrees are in a straight angle?|180°|90°|360°|270°
+What is 20% of 80?|16|20|8|18
+What is the area of a rectangle with length 7 cm and width 4 cm?|28 cm²|22 cm²|11 cm²|30 cm²
+What is the value of 3⁴?|81|27|64|243
+What is the sum of interior angles in a quadrilateral?|360°|180°|540°|720°
+What is 0.25 expressed as a fraction in lowest terms?|1/4|1/2|2/5|1/5
+What is the result of 12 - 8 + 3?|7|5|13|3
+What is the formula for the volume of a cube?|s³|s²|6s²|3s³
+What is the absolute value of -7?|7|-7|0|1
+If a triangle has angles of 30° and 60°, what is the third angle?|90°|60°|30°|180°
+What is the median of the numbers: 5, 8, 2, 9, 11?|8|5|7|9
+What is the decimal representation of 3/4?|0.75|0.33|0.67|0.8
+What is the circumference of a circle with radius 5 cm?|10π cm|5π cm|25π cm|20π cm
+What is 3/5 of 25?|15|12|18|20
+What is the area of a triangle with base 6 cm and height 4 cm?|12 cm²|24 cm²|10 cm²|15 cm²
+What is 2.5 × 0.4?|1|0.1|0.5|10
+What is the volume of a sphere with radius r?|4/3πr³|πr³|4πr²|2πr³
+What is the smallest prime number?|2|1|3|0
+What is the sum of 1/4 and 1/6?|5/12|7/10|1/10|2/10
+What is 35% expressed as a decimal?|0.35|3.5|0.035|3.05
+How many faces does a cube have?|6|8|12|4
+What is the greatest common divisor of 24 and 36?|12|6|18|24
+What is the result of (-3)²?|9|-9|6|3
+What is the slope of a horizontal line?|0|1|Undefined|Infinite
+What is 2/3 divided by 4?|1/6|8/3|2/12|1/12
+If 3x - 7 = 14, what is x?|7|3|4|9
+What is 15% of 80?|12|8|16|24
+What is the value of log₁₀(100)?|2|1|10|100
+What is the result of 5 - (-3)?|8|2|-8|0
+What is the area of a circle with diameter 8 cm?|16π cm²|4π cm²|64π cm²|8π cm²
+What is the value of 3! (factorial)?|6|3|9|27
+If a rectangle has perimeter 26 cm and width 5 cm, what is its length?|8 cm|13 cm|5 cm|10 cm
+What is the sum of the first 10 positive integers?|55|45|50|100
+What is the reciprocal of 0.25?|4|0.4|2.5|0.025
+What is the probability of rolling a 6 on a standard die?|1/6|1/3|1/2|1/8

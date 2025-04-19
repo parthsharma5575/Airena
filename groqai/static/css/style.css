@@ -1,0 +1,148 @@
+/* General styles */
+html, body {
+    height: 100%;
+}
+
+.container-fluid, .row {
+    height: 100%;
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100vh;
+    background-color: var(--bs-dark);
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+/* Main content styles */
+.main-content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat header styles */
+.chat-header {
+    background-color: var(--bs-dark);
+}
+
+/* Chat messages styles */
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 20px;
+}
+
+/* Message bubbles */
+.message {
+    max-width: 75%;
+    padding: 12px 15px;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: var(--bs-primary);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.assistant-message {
+    background-color: var(--bs-secondary);
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.system-message {
+    background-color: var(--bs-info);
+    color: white;
+    align-self: center;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Input sections */
+.input-sections {
+    background-color: var(--bs-dark);
+}
+
+.input-section {
+    width: 100%;
+}
+
+#text-input {
+    resize: none;
+    height: 60px;
+}
+
+/* Recording button pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(var(--bs-primary-rgb), 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0);
+    }
+}
+
+.recording {
+    animation: pulse 1.5s infinite;
+    background-color: var(--bs-danger) !important;
+}
+
+/* Image preview */
+.image-preview {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    border: 0.2em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+}
+
+@keyframes spinner-border {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto;
+        position: static;
+    }
+    
+    .main-content {
+        height: calc(100vh - 250px);
+    }
+    
+    .message {
+        max-width: 85%;
+    }
+}

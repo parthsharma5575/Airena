@@ -1,0 +1,48 @@
+What is the chemical symbol for water?|H2O|O2|CO2|NaCl
+Which planet is known as the Red Planet?|Mars|Venus|Earth|Jupiter
+What gas do plants absorb from the atmosphere?|Carbon Dioxide|Oxygen|Nitrogen|Hydrogen
+What is the hardest natural substance on Earth?|Diamond|Quartz|Gold|Granite
+What is the process by which plants make their food called?|Photosynthesis|Respiration|Digestion|Fermentation
+What particle has a negative charge?|Electron|Proton|Neutron|Positron
+Which element has the chemical symbol "Au"?|Gold|Silver|Aluminum|Argon
+What is the speed of light in a vacuum?|299,792,458 m/s|150,000,000 m/s|300,000 m/s|1,000,000 m/s
+Which blood type is known as the universal donor?|O-|AB+|A+|B-
+What is the largest organ in the human body?|Skin|Liver|Heart|Brain
+What is the study of fossils called?|Paleontology|Archaeology|Geology|Biology
+Which planet has the most moons?|Saturn|Jupiter|Neptune|Uranus
+What is the atomic number of Carbon?|6|12|8|4
+The Coriolis effect is responsible for what?|Direction of rotation of storms|Ocean tides|Mountain formation|Wind speed
+What is the smallest unit of matter?|Atom|Molecule|Cell|Quark
+Which metal is liquid at room temperature?|Mercury|Lead|Aluminum|Iron
+What is the pH of pure water?|7|0|14|5
+What type of radiation has the shortest wavelength?|Gamma rays|Radio waves|Ultraviolet|Infrared
+Which element is most abundant in Earth's atmosphere?|Nitrogen|Oxygen|Carbon dioxide|Hydrogen
+What is the function of mitochondria in a cell?|Energy production|Protein synthesis|Cell division|Waste removal
+The law of conservation of energy states that energy cannot be?|Created or destroyed|Measured accurately|Converted to matter|Used twice
+Which of these is NOT a greenhouse gas?|Nitrogen|Methane|Carbon dioxide|Water vapor
+What is the primary component of natural gas?|Methane|Propane|Butane|Ethane
+The periodic table is arranged by increasing?|Atomic number|Mass|Electronegativity|Density
+What is a light-year a measure of?|Distance|Time|Brightness|Weight
+Which of these is NOT a type of electromagnetic radiation?|Sound waves|X-rays|Gamma rays|Microwaves
+What is the chemical formula for table salt?|NaCl|H2O|CO2|CaCO3
+Which part of the brain is responsible for balance and coordination?|Cerebellum|Cerebrum|Medulla oblongata|Hypothalamus
+What is the most abundant element in the universe?|Hydrogen|Helium|Oxygen|Carbon
+Which animal has the longest lifespan?|Greenland shark|Tortoise|Elephant|Blue whale
+What is the most abundant gas in Earth's atmosphere?|Nitrogen|Oxygen|Carbon dioxide|Argon
+Which particle has no electrical charge?|Neutron|Electron|Proton|Ion
+What term describes organisms that create their own food?|Autotrophs|Heterotrophs|Carnivores|Herbivores
+Which part of the atom contains protons and neutrons?|Nucleus|Electron cloud|Valence shell|Orbital
+What color of light is scattered least by air molecules?|Red|Blue|Green|Yellow
+Which metal is used in thermometers?|Mercury|Lead|Silver|Aluminum
+What is the process of splitting an atom called?|Nuclear fission|Nuclear fusion|Radioactive decay|Ionization
+The movement of pollen from anther to stigma is called?|Pollination|Fertilization|Germination|Photosynthesis 
+What is the average adult human body temperature in Celsius?|37°C|36°C|98.6°C|40°C
+Which celestial body causes ocean tides on Earth?|Moon|Sun|Jupiter|Mars
+What instrument measures atmospheric pressure?|Barometer|Thermometer|Hygrometer|Anemometer
+Which gland produces insulin in the human body?|Pancreas|Thyroid|Pituitary|Adrenal
+What type of rock is formed from cooled lava?|Igneous|Sedimentary|Metamorphic|Limestone
+Which planet rotates on its side?|Uranus|Venus|Neptune|Mars
+What is the most electronegative element?|Fluorine|Oxygen|Chlorine|Nitrogen
+What is the scientific name for the Northern Lights?|Aurora Borealis|Solar flare|Magnetic storm|Cosmic rays
+What is the molecular shape of water?|Bent|Linear|Tetrahedral|Pyramidal
+Which type of energy does a moving object possess?|Kinetic energy|Potential energy|Thermal energy|Nuclear energy

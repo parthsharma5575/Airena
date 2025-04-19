@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluvio Quiz</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/quiz/quiz.css">
+</head>
+
+<body>
+    <div class="container py-4">
+        <!-- Header -->
+        <header class="mb-5 text-center">
+            <h1 class="display-4 mb-3">Fluvio Quiz</h1>
+            <div class="mb-3">
+                <img src="/quiz/images/infinity.png" alt="Infinity Quiz Logo" style="max-width: 120px; opacity: 0.8;">
+            </div>
+            <p class="lead">Test your knowledge across various subjects</p>
+            <a href="/" class="btn btn-outline-primary mt-2">
+                <i class="fas fa-arrow-left me-2"></i>Back to Home
+            </a>
+        </header>
+
+        <!-- Quiz Container -->
+        <div class="quiz-container">
+            <!-- Topic Selection Section -->
+            <div id="topic-selection" class="quiz-section active">
+                <div class="card bg-dark mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Select a Topic</h2>
+                        <p class="text-center text-muted mb-4">Choose a topic to generate a quiz with AI</p>
+                        
+                        <div class="row" id="topics-container">
+                            <!-- Topic cards will be populated dynamically -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100 topic-card" data-topic="loading">
+                                    <div class="card-body text-center">
+                                        <div class="spinner-border text-primary mb-3" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <h5>Loading topics...</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <button id="btn-generate-quiz" class="btn btn-primary" disabled>
+                                <span id="btn-generate-quiz-text">Select a topic to continue</span>
+                                <i class="fas fa-chevron-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Loading Section -->
+            <div id="quiz-loading" class="quiz-section">
+                <div class="card bg-dark mb-4">
+                    <div class="card-body text-center py-5">
+                        <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;"></div>
+                        <h4 class="mt-4">Generating Quiz with AI...</h4>
+                        <p class="text-muted">This might take a few moments</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quiz Questions Section -->
+            <div id="quiz-questions" class="quiz-section">
+                <div class="card bg-dark mb-4">
+                    <div class="card-body">
+                        <h3 id="quiz-topic-title" class="card-title mb-3">Quiz Topic</h3>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <span class="badge bg-primary" id="question-counter">Question 1/5</span>
+                                <span class="badge bg-success ms-2" id="score-counter">Score: 0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="question-container mb-4">
+                            <h4 id="question-text">Question will appear here</h4>
+                        </div>
+                        
+                        <div class="options-container mb-4">
+                            <div class="row" id="options-row">
+                                <!-- Options will be populated dynamically -->
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button id="btn-next-question" class="btn btn-primary" disabled>Next Question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quiz Results Section -->
+            <div id="quiz-results" class="quiz-section">
+                <div class="card bg-dark mb-4">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-4">Quiz Results</h3>
+                        <div class="result-display mb-4">
+                            <div class="display-4" id="final-score">3/5</div>
+                            <p class="text-muted" id="score-percentage">60% Correct</p>
+                        </div>
+                        <div class="feedback-message mb-4" id="result-feedback">
+                            Good job! You have a solid understanding of the topic.
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button id="btn-restart-quiz" class="btn btn-outline-primary me-3">
+                                <i class="fas fa-redo me-1"></i> Try Again
+                            </button>
+                            <button id="btn-new-topic" class="btn btn-primary">
+                                <i class="fas fa-book me-1"></i> New Topic
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/quiz/quiz.js"></script>
+</body>
+
+</html>

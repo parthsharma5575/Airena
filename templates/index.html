@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIrena - Your AI Playground</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    
+    <div class="main-layout">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="{{ url_for('index') }}" class="logo">AIrena</a>
+                <div class="nav-links">
+                    <a href="{{ url_for('groq') }}" class="nav-link">AI Chat</a>
+                    <a href="{{ url_for('quiz') }}" class="nav-link">Quizzes</a>
+                    <a href="{{ url_for('game') }}" class="nav-link">Games</a>
+                    <a href="{{ url_for('auth.logout') }}" class="nav-link">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Welcome to AIrena</h1>
+                        <p>Your one-stop destination for AI-powered entertainment and learning</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="container">
+                    <h2>What We Offer</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-robot"></i>
+                            <h3>AI Chat</h3>
+                            <p>Chat with our advanced AI assistant powered by Groq</p>
+                            <a href="{{ url_for('groq') }}" class="feature-btn">Try AI Chat</a>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gamepad"></i>
+                            <h3>AI Games</h3>
+                            <p>Play games enhanced with artificial intelligence</p>
+                            <a href="{{ url_for('game') }}" class="feature-btn">Play Games</a>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-brain"></i>
+                            <h3>Educational Quizzes</h3>
+                            <p>Test your knowledge with AI-generated quizzes</p>
+                            <a href="{{ url_for('quiz') }}" class="feature-btn">Take a Quiz</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <h3>100+</h3>
+                            <p>Active Users</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-comments"></i>
+                            <h3>500+</h3>
+                            <p>AI Conversations</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-trophy"></i>
+                            <h3>100+</h3>
+                            <p>Quizzes Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials">
+                <div class="container">
+                    <h2>What Our Users Say</h2>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The AI chat feature is incredibly intuitive and helpful. It's like having a personal assistant!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" alt="John">
+                                <h4>John D.</h4>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The quizzes are challenging and fun. I've learned so much about AI!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="Sarah">
+                                <h4>Sarah M.</h4>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The games are addictive and educational. Perfect for learning while having fun!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mike" alt="Mike">
+                                <h4>Mike R.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about">
+                <div class="container">
+                    <h2>Our Team</h2>
+                    <p>Meet the passionate individuals behind AIrena, dedicated to making AI accessible and fun for everyone.</p>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sumukhi&gender=female&style=circle&backgroundColor=b6e3f4&hairColor=000000&facialHairColor=000000&clothingColor=ff0000&accessoriesColor=000000" alt="Mokshit">
+                            </div>
+                            <h3>Mokshit Kaushik</h3>
+                            <p>Passionate about AI and creating innovative solutions</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mokshit&gender=male&style=circle&backgroundColor=c0aede&hairColor=000000&facialHairColor=000000&clothingColor=00ff00&accessoriesColor=000000" alt="Sumukhi">
+                            </div>
+                            <h3>Sumukhi Tripathi</h3>
+                            <p>AI researcher and technology innovator</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Kanishka" alt="Kanishka">
+                            </div>
+                            <h3>Kanishka Sharma</h3>
+                            <p>Design enthusiast with a focus on user experience</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Parth&gender=male&style=circle&backgroundColor=ffdfbf&hairColor=000000&facialHairColor=000000&clothingColor=0000ff&accessoriesColor=000000&glasses=round&glassesColor=000000&hat=hat2&hatColor=000000" alt="Parth">
+                            </div>
+                            <h3>Parth Sharma</h3>
+                            <p>Project visionary and team coordinator</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section class="newsletter">
+                <div class="container">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter for the latest updates and features</p>
+                    <form class="newsletter-form" method="POST" action="{{ url_for('subscribe') }}">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" class="subscribe-btn">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>AIrena</h3>
+                        <p>Your AI Playground</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <a href="{{ url_for('groq') }}">AI Chat</a>
+                        <a href="{{ url_for('quiz') }}">Quizzes</a>
+                        <a href="{{ url_for('game') }}">Games</a>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <p>Email: support@airena.com</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 AIrena. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+</body>
+</html>
