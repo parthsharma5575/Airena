@@ -8,9 +8,17 @@ from PIL import Image
 
 class GroqAPI:
     def __init__(self):
-        
         self.api_key = os.getenv("SECRET_API_KEY")
         self.client = groq.Client(api_key=self.api_key)
+        self.audio_enabled = False
+        
+        try:
+            # Try to initialize speech recognition to check if audio features are available
+            sr.Recognizer()
+            self.audio_enabled = True
+        except Exception as e:
+            print(f"Audio features disabled: {str(e)}")
+            self.audio_enabled = False
 
         self.system_prompt = {
             "role": "system",
@@ -57,6 +65,9 @@ class GroqAPI:
     
     def speech_to_text(self, audio_data):
         """Convert speech to text from audio data"""
+        if not self.audio_enabled:
+            return "Audio features are not available in this environment. Please use text input instead."
+            
         try:
             # Create temp files for original and converted audio
             with tempfile.NamedTemporaryFile(suffix=".flac", delete=False) as temp_input_file:
@@ -136,6 +147,12 @@ class GroqAPI:
     
     def process_audio(self, audio_data):
         """Process audio for transcription"""
+        if not self.audio_enabled:
+            return {
+                "transcription": "Audio features are not available in this environment. Please use text input instead.",
+                "response": "I'm sorry, but audio processing is not available in this environment."
+            }
+            
         try:
             # Create temp files for original and converted audio
             with tempfile.NamedTemporaryFile(suffix=".flac", delete=False) as temp_input_file:

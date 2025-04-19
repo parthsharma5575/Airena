@@ -31,6 +31,26 @@ document.addEventListener('DOMContentLoaded', function() {
     let audioRecorder = new AudioRecorder();
     let isRecording = false;
     
+    // Check if audio features are available
+    let audioFeaturesAvailable = false;
+    try {
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            audioFeaturesAvailable = true;
+        }
+    } catch (e) {
+        console.log('Audio features not available:', e);
+    }
+    
+    // Disable audio-related UI elements if audio features are not available
+    if (!audioFeaturesAvailable) {
+        voiceInputBtn.disabled = true;
+        voiceInputBtn.title = 'Audio features not available';
+        audioInputBtn.disabled = true;
+        audioInputBtn.title = 'Audio features not available';
+        textToSpeechToggle.disabled = true;
+        textToSpeechToggle.title = 'Text-to-speech not available';
+    }
+    
     // Add event listeners for input methods
     textInputBtn.addEventListener('click', switchToTextInput);
     voiceInputBtn.addEventListener('click', switchToVoiceInput);
@@ -68,6 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to switch to voice input mode
     function switchToVoiceInput() {
+        if (!audioFeaturesAvailable) {
+            addMessage("Audio features are not available in this environment. Please use text input instead.", "system");
+            return;
+        }
         setActiveButton(voiceInputBtn);
         setActiveSection(voiceInputSection);
         currentMode.innerHTML = '<i class="fas fa-microphone me-2"></i>Voice Input Mode';
@@ -82,9 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to switch to audio processing mode
     function switchToAudioProcessing() {
+        if (!audioFeaturesAvailable) {
+            addMessage("Audio features are not available in this environment. Please use text input instead.", "system");
+            return;
+        }
         setActiveButton(audioInputBtn);
         setActiveSection(audioProcessingSection);
-        currentMode.innerHTML = '<i class="fas fa-file-audio me-2"></i>Audio Processing Mode';
+        currentMode.innerHTML = '<i class="fas fa-headphones me-2"></i>Audio Processing Mode';
     }
     
     // Function to set active button
@@ -143,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
             addMessage(data.response, 'assistant');
             
             // Speak the response if text-to-speech is enabled
-            if (textToSpeechToggle.checked) {
+            if (textToSpeechToggle.checked && audioFeaturesAvailable) {
                 speakText(data.response);
             }
         })
@@ -159,6 +187,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to toggle voice recording
     function toggleRecording() {
+        if (!audioFeaturesAvailable) {
+            addMessage("Audio features are not available in this environment. Please use text input instead.", "system");
+            return;
+        }
+        
         if (!isRecording) {
             // Start recording
             audioRecorder.startRecording()
@@ -203,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         addMessage(data.response, 'assistant');
                         
                         // Speak the response if text-to-speech is enabled
-                        if (textToSpeechToggle.checked) {
+                        if (textToSpeechToggle.checked && audioFeaturesAvailable) {
                             speakText(data.response);
                         }
                         
@@ -278,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
             addMessage(data.description, 'assistant');
             
             // Speak the response if text-to-speech is enabled
-            if (textToSpeechToggle.checked) {
+            if (textToSpeechToggle.checked && audioFeaturesAvailable) {
                 speakText(data.description);
             }
             
@@ -311,6 +344,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to process uploaded audio
     function processAudio() {
+        if (!audioFeaturesAvailable) {
+            addMessage("Audio features are not available in this environment. Please use text input instead.", "system");
+            return;
+        }
+        
         if (audioUpload.files.length === 0) return;
         
         const file = audioUpload.files[0];
@@ -342,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function() {
             addMessage(data.response, 'assistant');
             
             // Speak the response if text-to-speech is enabled
-            if (textToSpeechToggle.checked) {
+            if (textToSpeechToggle.checked && audioFeaturesAvailable) {
                 speakText(data.response);
             }
             
@@ -400,6 +438,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to speak text using browser's speech synthesis
     function speakText(text) {
+        if (!audioFeaturesAvailable) return;
+        
         // Stop any current speech
         if (synth.speaking) {
             synth.cancel();
